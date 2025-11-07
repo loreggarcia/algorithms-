@@ -19,7 +19,7 @@ int main(){
          else if(numbers[i] > target){
             l = m + 1;
          } 
-
+         
          else {
             h = m;
          }
