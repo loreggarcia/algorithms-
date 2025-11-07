@@ -15,11 +15,10 @@ int main(){
             printf("The index is: %d", i);
             break;
          } 
-
          else if(numbers[i] > target){
             l = m + 1;
          } 
-         
+
          else {
             h = m;
          }
