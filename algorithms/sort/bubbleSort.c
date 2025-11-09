@@ -4,7 +4,6 @@ const int length = sizeof(numbers) / sizeof(numbers[0]);
 int i;
 int j;
 int swap;
-int temp;
 
 int main(){
 	for(i = 0; i < length; i++){ 
