@@ -33,6 +33,11 @@ node_t *insert_at_head(node_t *head, node_t *node_to_insert){
     return node_to_insert;
 }
 
+void insert_after_node(node_t *node_to_after, node_t *newnode){
+    newnode->next = node_to_after->next; 
+    node_to_after->next = newnode;
+}
+
 int main(){
     node_t *head;
     node_t *tmp;
@@ -43,6 +48,8 @@ int main(){
         tmp = create_new_node(i);
         head = insert_at_head(head, tmp);
     }
+
+    insert_after_node(tmp, create_new_node(75));
 
     printlist(head);
     return 0;
