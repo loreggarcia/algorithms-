@@ -11,6 +11,7 @@ typedef struct node node_t; // só uma associação
 void printlist(node_t * head){
     /*Função pra verificar o topo da lista, tipo o peek 
     Printa os valores enquanto a pilha existir*/
+    //na real, só printa mesmo
     node_t *temporary = head; //ponteiro temporário, isso porque o head vai mudar e eu vouprecisar de uma indicação de memória pras diferentes vezes que e for fazer isso
 
     while (temporary != NULL) { 
