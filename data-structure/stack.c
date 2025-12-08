@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h> //memory management
-#include <limits.h>
+#include <limits.h> 
 
 struct StackNode { 
     int value; 
@@ -83,4 +83,4 @@ int main(){
     printlist(head);
 
     return 0;
-}
+}   

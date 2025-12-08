@@ -4,13 +4,12 @@ void swap(int *x, int *y){ //os ponteiros vão guardar as mudanças
     int temp = *x;
     *x = *y;
     *y = temp;
-}
-
+} 
 
 int partition(int array[], int lo, int hi){
     int i = lo;
     int pivotValue = array[hi]; // particionamento de Lomuto: escolhe o último pedaço - o uso do array é para garantir que os high fiquem armazenados
-    //hi poderia estar como uma estrutura de ponteiro
+    //hi poderia estar como uma estrutura de ponteiro? Sim, esse armazenamento 
     for (int j = lo; j < hi; j++){
         if(array[j] <= pivotValue){
             swap(&array[i], &array[j]);
@@ -21,16 +20,17 @@ int partition(int array[], int lo, int hi){
     return i;
 }
 
-void quicksortRecursion(int array[], int lo, int hi){
-    if(lo < hi){
-        int pivotIndex = partition(array, lo, hi);
+//A volta
+void quicksortRecursion(int array[], int lo, int hi){ //
+    if(lo < hi){ 
+        int pivotIndex = partition(array, lo, hi); 
         //the two sides
         quicksortRecursion(array, lo, pivotIndex - 1);
         quicksortRecursion(array, pivotIndex + 1, hi);
     }
 }
 
-void quicksort(int array[], int length){
+void quicksort(int array[], int length){ 
     quicksortRecursion(array, 0, length - 1); 
 }
 
