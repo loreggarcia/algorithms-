@@ -66,8 +66,4 @@ int main(){
     n5->right = n7;
 
     printree(n1, 0);
-
-    free(n1);
-    free(n2);
-    free(n3);
 }
