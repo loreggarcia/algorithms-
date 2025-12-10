@@ -103,7 +103,7 @@ int main(){
     struct TreeNode *n6 = (struct TreeNode*)malloc(sizeof(struct TreeNode)); 
     struct TreeNode *n7 = (struct TreeNode*)malloc(sizeof(struct TreeNode)); 
 
-
+    //indico o valor e faço com que as referencias comecem nulas
     n1 -> value = 10;
     n1->left = NULL;
     n1->right = NULL;
