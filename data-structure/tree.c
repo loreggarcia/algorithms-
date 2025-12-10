@@ -6,10 +6,10 @@ typedef struct treeNode {
     int value; 
     struct treeNode* left; 
     struct treeNode* right;
-} tree_t; // pq especificamente o "_t" gera isso? É type
+} tree_t; 
 
 tree_t *createnode(int value){
-    tree_t* result = malloc(sizeof(tree_t)); //alocando memoria dinaicamente e tals, mas 
+    tree_t* result = malloc(sizeof(tree_t)); //alocando memoria dinaicamente e tals
     
     if(result != NULL) { 
         result->left = NULL; 
@@ -20,9 +20,9 @@ tree_t *createnode(int value){
     return result;
 }
 
-void printree(tree_t *root, int level){ //quem guia agora 
+void printree(tree_t *root, int level){ 
     
-
+    //quando o nível da árvore aumenta, ele identifica
     for(int i=0; i < level; i++) { //
         printf("--------------");
     }

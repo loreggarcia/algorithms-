@@ -40,18 +40,20 @@ void printlist(struct QueueNode *front){
 
 void dequeue(struct QueueNode **rear, struct QueueNode **front){
 
-    if(front == NULL) return; //se não tiver nada na frent, não existe
+    if(*front == NULL) return; //se não tiver nada na frente, não existe
 
     else {
         struct QueueNode* temp = *front; 
         *front = (*front)->next; 
-        if(*front == NULL){
-            (*front)->prev = NULL;
-            (*rear) = NULL;
-        }
-        free(temp);
-    }
-    
+            if (*front == NULL) {
+            // A fila ficou vazia: atualiza só o rear
+            *rear = NULL;
+            } else {
+                // Ainda existe alguém na frente: o prev do novo front vira NULL
+                (*front)->prev = NULL;
+            }
+            free(temp);
+    }    
 }
 
 int main(){
