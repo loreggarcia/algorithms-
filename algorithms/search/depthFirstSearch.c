@@ -41,29 +41,10 @@ struct TreeNode* Search(struct TreeNode *curr, int needle){
         printf("Esse valor não está na lista.\n");
     }
 
-
-    /*while(head != NULL){ //Enquanto a pilha existe
-        curr = head->node;  
-        
-        printf("%d\n", head->node->value); 
-        pop(&head);
-
-        if(curr->right != NULL){
-            push(&head, curr->right);
-        } 
-        if(curr->left != NULL){
-            push (&head, curr->left); 
-        }
-    }*/
     else if(needle == curr->value){
         printf("Achei! O seu número é: %d \n", curr->value);
     }
 
-    /*
-        Se needle for menor (<) que curr->value, retorne a busca na esquerda (left).
-
-        Se needle for maior (>) que curr->value, retorne a busca na direita (right).
-    */
 
     else if(needle < curr->value){
         return Search(curr->left, needle);
