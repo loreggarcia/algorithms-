@@ -2,11 +2,11 @@
 #include <stdlib.h> //memory management
 #include <limits.h> 
 
-typedef struct TreeNode { 
+struct TreeNode { 
     int value; 
     struct TreeNode* left; 
     struct TreeNode* right; 
-} tree_t;
+};
 
 struct StackNode { 
     struct TreeNode *node;
