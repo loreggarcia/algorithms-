@@ -90,9 +90,29 @@ void bfs(struct TreeNode *root){ //a função inicial que deve ser chamada é ro
     }
 }
 
+struct TreeNode* Search(struct TreeNode *curr, int needle){
+    if(curr == NULL){ //aponta pra um lugar que não tem nada 
+        printf("Esse valor não está na lista.\n");
+    }
+    else if(needle == curr->value){
+        printf("Achei! O seu número é: %d \n", curr->value);
+    }
+
+    else if(needle < curr->value){
+        Search(curr->left, needle);
+    }
+
+    else if(needle > curr->value){
+        Search(curr->right, needle);
+    }
+}
+
 int main(){
     struct QueueNode *rear;
     struct QueueNode *front;
+    
+    struct TreeNode *root;
+    struct TreeNode *curr;
 
     //para criar um nó é necessário reservar um espaço para ele
     struct TreeNode *n1 = (struct TreeNode*)malloc(sizeof(struct TreeNode)); 
@@ -149,4 +169,5 @@ int main(){
     n5->right = n7;
 
     bfs(n1);
+    Search(n1, 14);
 }

@@ -35,6 +35,46 @@ void pop(struct StackNode **head){
     }
 }
 
+struct TreeNode* Search(struct TreeNode *curr, int needle){
+
+    if(curr == NULL){ //aponta pra um lugar que não tem nada 
+        printf("Esse valor não está na lista.\n");
+    }
+
+
+    /*while(head != NULL){ //Enquanto a pilha existe
+        curr = head->node;  
+        
+        printf("%d\n", head->node->value); 
+        pop(&head);
+
+        if(curr->right != NULL){
+            push(&head, curr->right);
+        } 
+        if(curr->left != NULL){
+            push (&head, curr->left); 
+        }
+    }*/
+    else if(needle == curr->value){
+        printf("Achei! O seu número é: %d \n", curr->value);
+    }
+
+    /*
+        Se needle for menor (<) que curr->value, retorne a busca na esquerda (left).
+
+        Se needle for maior (>) que curr->value, retorne a busca na direita (right).
+    */
+
+    else if(needle < curr->value){
+        return Search(curr->left, needle);
+    }
+
+    else{
+        return Search(curr->right, needle);
+    }
+
+}
+
 void dfs (struct TreeNode *root){
     struct StackNode *head = NULL;
     struct TreeNode *curr;
@@ -45,7 +85,7 @@ void dfs (struct TreeNode *root){
 
     while(head != NULL){ //Enquanto a pilha existe
         curr = head->node;  
-
+        
         printf("%d\n", head->node->value); 
         pop(&head);
 
@@ -58,8 +98,10 @@ void dfs (struct TreeNode *root){
     }
 }
 
+
 int main(){
     struct StackNode *head;
+    struct StackNode *root;
 
     //para criar um nó é necessário reservar um espaço para ele
     struct TreeNode *n1 = (struct TreeNode*)malloc(sizeof(struct TreeNode)); 
@@ -71,23 +113,23 @@ int main(){
     struct TreeNode *n7 = (struct TreeNode*)malloc(sizeof(struct TreeNode)); 
 
     //indico o valor e faço com que as referencias comecem nulas
-    n1 -> value = 10;
+    n1 -> value = 13;
     n1->left = NULL;
     n1->right = NULL;
 
-    n2 -> value = 11;
+    n2 -> value = 12;
     n2->left = NULL;
     n2->right = NULL;
 
-    n3 -> value = 12;
+    n3 -> value = 17;
     n3->left = NULL;
     n3->right = NULL;
 
-    n4 -> value = 13;
+    n4 -> value = 11;
     n4->left = NULL;
     n4->right = NULL;
 
-    n5 -> value = 14;
+    n5 -> value = 10;
     n5->left = NULL;
     n5->right = NULL;
 
@@ -105,8 +147,10 @@ int main(){
     n1->right = n3;
     n2->left = n4;
     n2->right = n5;
-    n5->left = n6;
-    n5->right = n7;
+    n3->left = n6;
+    n3->right = n7;
 
     dfs(n1);
+
+    Search(n1, 15);
 }
