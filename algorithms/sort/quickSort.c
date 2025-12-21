@@ -1,3 +1,9 @@
+/*
+- variável i armazena a posição do pivô (io = 0)
+- variável j controla a iteração (jo = 1)
+- Sequencia de parcionamentos 
+*/
+
 #include <stdio.h>
 
 void swap(int *x, int *y){ //os ponteiros vão guardar as mudanças 
