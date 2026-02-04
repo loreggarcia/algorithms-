@@ -44,17 +44,22 @@ int main(){
     
     near[u]=near[v]=0; //marca como visto
 
+    /*nessa parte do código, como eu tenho um grafo sem direção, eu não tenho direção pra continuar,
+    ou seja, eu posso escolher qualquer um dos vertices pra seguir, a questão é tentar escolher 
+    qual dos caminhos para ele é menos custoso*/
     for(i=1;i<=n;i++){ 
+        //guarda quem é menos custoso
         if(cost[i][u]<cost[i][v])
             near[i]=u;
         else 
             near[i]=v;
     }
 
-    for(i=1;i<n-1;i++){ //
+
+    for(i=1;i<n-1;i++){ 
         min=I;
         for(j=1;j<=n;j++){
-            if(near[j]!=0 && cost[j][near[j]]<min){
+            if(near[j]!=0 && cost[j][near[j]]<min){ //mesma lógica de ordenação do mais próximo
                 k=j;
                 min=cost[j][near[j]];
             }
@@ -69,6 +74,7 @@ int main(){
         }
     }
 
+    //só pra imprimir 
     for(i=0;i<n-1;i++){
         cout<<"("<<t[0][i]<<","<<t[1][i]<<")"<<endl;
     }
