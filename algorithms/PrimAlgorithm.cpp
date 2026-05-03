@@ -5,7 +5,7 @@ possesses all of the graph’s edges or vertices with the rarest feasible edges.
 #include <climits>
 /*sem conexão direta entre os pontos 
 ele instancia que a conexão entre os pontos é máxima(ou seja, infinita)*/
-#define I INT_MAX  
+
 
 using namespace std; // means that we can use names for objects and variables from the standard library.
 
